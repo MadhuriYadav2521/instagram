@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.html{
+    font-size: 62.5%;
+}
+.screen{
+    width: 100%;
+}
+.homeContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.home-left{
+    width: 18%;
+    border: .1rem  solid black;
+    height: 552px;
+    padding: 1rem;
+}
+.home-middle{
+    width: 52%;
+    border: .1rem solid black;
+    height: 552px;
+}
+.home-right{
+    width: 30%;
+    border: .1rem solid black;
+    height:  552px;
+}
+.logo-wrapper{
+    width: 100%;
+}
+.logo-img{
+    width: 50%;
+    margin: 1rem 0 1rem 0;
+}
+.logo-img  img{
+    width: 100%;
+}
