@@ -20,12 +20,9 @@
                 Sign up to see photos ad videos from your friends.
             </div>
             <div class="form-wrapper">
-                <form action="" onsubmit="register(event)">
+                <form action="" onsubmit="login(event)">
 
-                    <div class="input_wrap">
-                        <input type="text" id="userName" required autocomplete="off" />
-                        <label>Enter your name</label>
-                    </div>
+                    
                     <div class="input_wrap">
                         <input type="email" id="userEmail" required autocomplete="off" />
                         <label>Enter your email</label>
@@ -33,10 +30,6 @@
                     <div class="input_wrap">
                         <input type="password" id="userPassword" required autocomplete="off" />
                         <label>Enter your password</label>
-                    </div>
-                    <div class="input_wrap">
-                        <input type="password" id="userConfirmPassword" required autocomplete="off" />
-                        <label>Confirm password</label>
                     </div>
 
                     <p class="tandc-sp-small-text">People who use our service may have uploaded your contact information
@@ -48,11 +41,12 @@
                     <div class="submit-btn">
                         <input type="submit" name="" id="" value="Sign Up">
                     </div>
-                    <p class="return-btn tandc-sp-small-text " onclick="window.location.href='./login.html'" style="cursor: pointer;">Existing user? Log in</p>
+                    <p class="return-btn tandc-sp-small-text " onclick="window.location.href='./signup.html'" style="cursor: pointer;">Don't have account? Sign up</p>
                 </form>
             </div>
         </div>
     </div>
+
 
 
     <script src="./main.js"></script>
