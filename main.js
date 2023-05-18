@@ -87,3 +87,24 @@ function logout() {
     window.location.reload();
 }
 
+
+
+function addProduct(event) {
+    event.preventDefault();
+    // alert("Product adding....")
+    var pname = document.getElementById("pname").value;
+    var pprofile = document.getElementById("pprofile").value;
+    var pimage = document.getElementById("pimage").value;
+    var pcaption = document.getElementById("pcaption").value;
+    var product = { pname, pprofile, pimage, pcaption};
+
+    var LS = JSON.parse(localStorage.getItem("instagramPosts")) || [];
+    LS.push(product);
+    localStorage.setItem("instagramPosts", JSON.stringify(LS));
+
+    alert("Product Added Successfully.")
+    // document.getElementById("pname").value = "";
+    // document.getElementById("pprofile").value = "";
+    // document.getElementById("pimage").value = "";
+    // document.getElementById("pcaption").value = "";
+}

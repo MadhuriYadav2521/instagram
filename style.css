@@ -264,6 +264,214 @@ input[type="password"]:focus {
     color: black;
 }
 
+.post-section {
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+.post-container {
+    width: 67%;
+    margin: auto;
+    padding-bottom: 1rem;
+    border-bottom: .1rem solid lightgray;
+    /* border: 1px solid black; */
+    margin-bottom: 1rem;
+}
+
+.post-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-header-left {
+    /* border: 1px solid orange; */
+    display: flex;
+    justify-content: start;
+    gap: .5rem;
+    padding: .4rem 0;
+}
+
+.post-p-img {
+    width: 8%;
+    /* border: 1px solid violet; */
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.post-p-img img {
+    width: 100%;
+    border-radius: 100%;
+    aspect-ratio: 3/3;
+    object-fit: cover;
+}
+
+.post-userID {
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.dot {
+    font-size: 1rem;
+    color: gray;
+    cursor: pointer;
+}
+
+.post-time {
+    font-size: .9rem;
+    color: gray;
+    cursor: pointer;
+}
+.post-header-right i{
+    /* border: 1px solid orangered; */
+    font-size: 1.3rem;
+    padding: .5rem;
+}
+.post-body{
+    width: 100%;
+}
+.post-image{
+    width: 100%;
+}
+.post-image img{
+    width: 100%;
+}
+.post-footer{
+    width: 100%;
+}
+.lcss-wrapper{
+    width: 100%;
+    /* border: 1px solid salmon; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 0;
+}
+.likeCommentShare{
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+    align-items: center;
+    
+}
+.likeCommentShare i{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.post-save i{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.p-likes{
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.p-comment{
+    font-size: .9rem;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.p-comment span{
+    margin-right: .5rem;
+}
+.more{
+    font-size: .9rem;
+    color: gray;
+    cursor: pointer;
+}
+.see-translation{
+    font-size: .7rem;
+    font-weight: 550;
+}
+.view-comment{
+    font-size: .9rem;
+    color: gray;
+    cursor: pointer;
+}
+.add-comment{
+    font-size: .9rem;
+    color: gray;
+    cursor: pointer;
+}
+.home-right-container{
+    width: 90%;
+    /* border: 1px solid black; */
+    padding-top: 2rem;
+}
+.account-switch{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 0;
+}
+.account-switch-left{
+    /* border: 1px solid salmon; */
+    display: flex;
+    justify-content: start;
+    gap: .5rem;
+    align-items: center;
+}
+.account-profile-img{
+    width: 18%;
+    border-radius: 100%;
+}
+.account-profile-img img{
+    width: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+    aspect-ratio: 3/3;
+}
+.account-id{
+    font-size: .9rem;
+    font-weight: 600;
+    margin-bottom: .2rem;
+}
+.account-subname{
+    font-size: .8rem;
+    color: gray;
+}
+.account-switch-right{
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: rgb(0, 149, 246);
+}
+.suggested{
+    width: 100%;
+}
+.suggested-title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.suggested-title span:nth-child(1){
+    font-size: .9rem;
+    color: gray;
+    font-weight: 600;
+}
+.suggested-title span:nth-child(2){
+    font-size: .8rem;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.suggested-accounts{
+    width: 100%;
+}
+.suggested .account-profile-img{
+    width: 13%;
+}
+.verified i{
+    font-size: .8rem;
+    color: rgb(0, 149, 246);
+}
+
 
 /* ------------ profile ------------ */
 
@@ -509,17 +717,21 @@ input[type="password"]:focus {
 .like-hover i {
     margin-left: .4rem;
 }
-.comment-hover{
+
+.comment-hover {
     font-weight: 600;
 }
+
 .comment-hover i {
     margin-left: .4rem;
 }
-.profile-footer{
+
+.profile-footer {
     width: 100%;
     margin-bottom: 2rem;
 }
-.p-f-head{
+
+.p-f-head {
     width: 90%;
     margin: auto;
     /* border: 1px solid salmon; */
@@ -528,13 +740,15 @@ input[type="password"]:focus {
     align-items: center;
     padding: 1rem 0;
 }
-.footer-link{
+
+.footer-link {
     font-size: .8rem;
     color: gray;
     text-transform: capitalize;
 
 }
-.p-f-footer{
+
+.p-f-footer {
     width: 90%;
     margin: auto;
     /* border: 1px solid salmon; */
@@ -543,12 +757,49 @@ input[type="password"]:focus {
     align-items: center;
     padding: .5rem 0;
 }
-.footer-link2{
+
+.footer-link2 {
     font-size: .8rem;
     color: gray;
     text-transform: capitalize;
     margin-right: 1rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
