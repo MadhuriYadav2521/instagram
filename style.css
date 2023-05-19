@@ -100,6 +100,9 @@ a {
     text-transform: capitalize;
     margin-left: 1rem;
 }
+.navLink:nth-child(8) span{
+    text-transform:none;
+}
 
 /* -----------  login --------- */
 
@@ -409,6 +412,7 @@ input[type="password"]:focus {
     justify-content: space-between;
     align-items: center;
     padding: .5rem 0;
+    cursor: pointer;
 }
 .account-switch-left{
     /* border: 1px solid salmon; */

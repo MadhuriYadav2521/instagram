@@ -127,3 +127,25 @@ function addStory(event) {
     // document.getElementById("pimage").value = "";
     // document.getElementById("pcaption").value = "";
 }
+
+
+
+function createProfile(event) {
+    event.preventDefault();
+    // alert("Product adding....")
+    var bio = document.getElementById("bio").value;
+    var pimage = document.getElementById("pimage").value;
+    var pSubname = document.getElementById("pSubname").value;
+    var product = { bio, pimage,pSubname};
+
+    var LS = JSON.parse(localStorage.getItem("instagramProfile")) || [];
+    LS.push(product);
+    localStorage.setItem("instagramProfile", JSON.stringify(LS));
+
+    alert("Profile edited.")
+    window.location.href="./profile.html"
+    // document.getElementById("pname").value = "";
+    // document.getElementById("pprofile").value = "";
+    // document.getElementById("pimage").value = "";
+    // document.getElementById("pcaption").value = "";
+}

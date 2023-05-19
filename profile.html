@@ -45,7 +45,7 @@
                         <i class="fa-regular fa-heart"></i>
                         <span>notifications</span>
                     </div>
-                    <div class="navLink">
+                    <div class="navLink" onclick="window.location.href='./add-post.html'">
                         <i class="fa-regular fa-square-plus"></i>
                         <span>create</span>
                     </div>
@@ -67,15 +67,16 @@
             <div class="profile-right">
                 <div class="profileContainer">
                     <div class="profile-header">
-                        <div class="profile-header-left">
-                            <div class="profile-img">
-                                <img src="https://i.etsystatic.com/42259008/r/il/da4255/4806756663/il_570xN.4806756663_rs4q.jpg" alt="">
+                        <div class="profile-header-left" id="finalProfile">
+                            <div class="profile-img" id="profileImage">
+                                <!-- <img src="https://i.etsystatic.com/42259008/r/il/da4255/4806756663/il_570xN.4806756663_rs4q.jpg"
+                                    alt=""> -->
                             </div>
                         </div>
                         <div class="profile-header-right">
                             <div class="profile-first-content">
-                                <span class="username">m.y2521</span>
-                                <span class="edit-profile">Edit profile</span>
+                                <span class="username"  id="profileSubname">name</span>
+                                <span class="edit-profile" onclick="window.location.href='./createProfile.html'">Edit profile</span>
                                 <span class="options"><i class="fa-solid fa-gear"></i></span>
                             </div>
                             <div class="profile-social-count">
@@ -84,8 +85,10 @@
                                 <span class="following-count"><span>22</span>following</span>
                             </div>
                             <div class="profile-bio-wrapper">
-                                <pre class="bio-content"><b>Full Stack Developer</b>
-&#128522;
+                                <!-- <span class="username" id="profileSubname">m.y2521</span> -->
+
+                                <pre class="bio-content" id="ProfileBio">
+
                                 </pre>
 
                             </div>
@@ -191,6 +194,66 @@
             // else{
             //     alert("current user absent")
             // }
+
+            var currentUser = JSON.parse(localStorage.getItem("instagramCurrentUser"))
+
+            var userData = JSON.parse(localStorage.getItem("instagramUsers"))
+            var userBio = JSON.parse(localStorage.getItem("instagramProfile"))
+            for (var i = 0; i < userData.length; i++) {
+                if (currentUser.useremail === userData[i].useremail) {
+                    // alert("got")
+                    if (userData[i].bio == undefined) {
+                        userData[i].bio = userBio;
+                    }
+                    // alert("profile created.")
+                    // window.location.href = './cart.html'
+                }
+            }
+            localStorage.setItem("instagramUsers", JSON.stringify(userData))
+
+            var divToAppendprofileImage = document.getElementById("profileImage")
+            var divToAppendprofileSubname = document.getElementById("profileSubname")
+            var divToAppendProfileBio = document.getElementById("ProfileBio")
+            var divToAppendfinalProfile = document.getElementById("finalProfile")
+            // var divToAppendfinalUsername = document.getElementById("username")
+            
+
+
+            var products;
+            for (var i = 0; i < userData.length; i++) {
+                if (currentUser.useremail == userData[i].useremail) {
+                    products = userBio;
+                }
+            }
+            console.log(products, "bio info here");
+            // var finalData = "";
+
+
+
+            var finalProfileImage = "";
+            var finalProfileSubname = "";
+            var finalProfileBio = "";
+            var finalProfile = "";
+
+            for (var i = 0; i < products.length; i++) {
+                finalProfile = finalProfileImage = `<div class="profile-img" id="profileImage">
+                    <img src='${products[i].pimage}'/>
+                            </div>
+                `
+                finalProfileSubname = `${products[i].pSubname}`
+                finalProfileBio = `${products[i].bio}`
+            }
+
+            // `<div> <img src='${products[i].proImage}'/><br/>
+            //             <h2>${products[i].proName}</h2><br/>
+            //             <h3>${products[i].proPrice}</h3>`
+
+            divToAppendprofileImage.innerHTML = finalProfileImage;
+            divToAppendprofileSubname.innerHTML = finalProfileSubname;
+            divToAppendProfileBio.innerHTML = finalProfileBio;
+            divToAppendfinalProfile.innerHTML = finalProfile;
+
+
         }
         function logout() {
             alert("We will miss you..")
@@ -199,6 +262,7 @@
         }
 
     </script>
+    <script src="./main.js"></script>
 </body>
 
 </html>

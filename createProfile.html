@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Create Profile</title>
 </head>
 <body>
     <div class="add-product-container">
       
-        <form action="" onsubmit="addStory(event)">
-            <h1 class="admin-panel-title">add story</h1>
+        <form action="" onsubmit="createProfile(event)">
+            <h1 class="admin-panel-title">create Profile</h1>
             <div class="input_wrap">
-                <input type="text" id="pname" required  autocomplete="off"/>
-                <label>user name</label>
+                <input type="text" id="pSubname" required  autocomplete="off"/>
+                <label>post sub name</label>
             </div>
             <div class="input_wrap">
                 <input type="text" id="pimage" required  autocomplete="off"/>
                 <label>post Image url</label>
             </div>
+            <div class="input_wrap">
+                <textarea rows="4" cols="50" name="comment" id="bio">
+                    Enter text here...</textarea>
+                <label>bio</label>
+            </div>
 
            <div class="submit-field">
-            <input type="submit" value="Add story" class="admin-panel-btn">
+            <input type="submit" value="Done" class="admin-panel-btn">
            </div>
                 
             </div>
