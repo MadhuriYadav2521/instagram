@@ -89,7 +89,7 @@ function logout() {
 
 
 
-function addProduct(event) {
+function addPost(event) {
     event.preventDefault();
     // alert("Product adding....")
     var pname = document.getElementById("pname").value;
@@ -102,7 +102,26 @@ function addProduct(event) {
     LS.push(product);
     localStorage.setItem("instagramPosts", JSON.stringify(LS));
 
-    alert("Product Added Successfully.")
+    alert("Post Added Successfully.")
+    // document.getElementById("pname").value = "";
+    // document.getElementById("pprofile").value = "";
+    // document.getElementById("pimage").value = "";
+    // document.getElementById("pcaption").value = "";
+}
+
+
+function addStory(event) {
+    event.preventDefault();
+    // alert("Product adding....")
+    var pname = document.getElementById("pname").value;
+    var pimage = document.getElementById("pimage").value;
+    var product = { pname, pimage};
+
+    var LS = JSON.parse(localStorage.getItem("instagramStories")) || [];
+    LS.push(product);
+    localStorage.setItem("instagramStories", JSON.stringify(LS));
+
+    alert("Story Added Successfully.")
     // document.getElementById("pname").value = "";
     // document.getElementById("pprofile").value = "";
     // document.getElementById("pimage").value = "";
