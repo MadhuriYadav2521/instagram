@@ -103,10 +103,10 @@ function addPost(event) {
     localStorage.setItem("instagramPosts", JSON.stringify(LS));
 
     alert("Post Added Successfully.")
-    // document.getElementById("pname").value = "";
-    // document.getElementById("pprofile").value = "";
-    // document.getElementById("pimage").value = "";
-    // document.getElementById("pcaption").value = "";
+    document.getElementById("pname").value = "";
+    document.getElementById("pprofile").value = "";
+    document.getElementById("pimage").value = "";
+    document.getElementById("pcaption").value = "";
 }
 
 
@@ -122,30 +122,12 @@ function addStory(event) {
     localStorage.setItem("instagramStories", JSON.stringify(LS));
 
     alert("Story Added Successfully.")
-    // document.getElementById("pname").value = "";
-    // document.getElementById("pprofile").value = "";
-    // document.getElementById("pimage").value = "";
-    // document.getElementById("pcaption").value = "";
+    document.getElementById("pname").value = "";
+    document.getElementById("pprofile").value = "";
+    document.getElementById("pimage").value = "";
+    document.getElementById("pcaption").value = "";
 }
 
 
 
-function createProfile(event) {
-    event.preventDefault();
-    // alert("Product adding....")
-    var bio = document.getElementById("bio").value;
-    var pimage = document.getElementById("pimage").value;
-    var pSubname = document.getElementById("pSubname").value;
-    var product = { bio, pimage,pSubname};
 
-    var LS = JSON.parse(localStorage.getItem("instagramProfile")) || [];
-    LS.push(product);
-    localStorage.setItem("instagramProfile", JSON.stringify(LS));
-
-    alert("Profile edited.")
-    window.location.href="./profile.html"
-    // document.getElementById("pname").value = "";
-    // document.getElementById("pprofile").value = "";
-    // document.getElementById("pimage").value = "";
-    // document.getElementById("pcaption").value = "";
-}
