@@ -768,6 +768,34 @@ input[type="password"]:focus {
     text-transform: capitalize;
     margin-right: 1rem;
 }
+.add-post-container{
+    width: 60%;
+    border: .1rem solid lightgray;
+    margin: 4rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-post-container form{
+    width: 50%;
+    padding:  0 2rem;
+}
+.add-post-img-wrapper{
+    width: 50%;
+    /* border: 1px solid black; */
+}
+.add-post-img-wrapper img{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
 
 
 

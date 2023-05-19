@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Instagram</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.jpg">
+    <script src="https://kit.fontawesome.com/8cfedbae53.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="add-product-container">
-      
-        <form action="" onsubmit="addPost(event)">
-            <h1 class="admin-panel-title">add product</h1>
-            <div class="input_wrap">
-                <input type="text" id="pname" required  autocomplete="off"/>
-                <label>user name</label>
-            </div>
-            <div class="input_wrap">
-                <input type="text" id="pprofile" required autocomplete="off" />
-                <label>user profile image</label>
-            </div>
-            <div class="input_wrap">
-                <input type="text" id="pimage" required  autocomplete="off"/>
-                <label>post Image url</label>
-            </div>
-            <div class="input_wrap">
-                <input type="text" id="pcaption" required  autocomplete="off"/>
-                <label>post caption</label>
+    <div class="screen">
+        <div class="add-post-container">
+            <div class="add-post-img-wrapper">
+                <img src="https://pbs.twimg.com/media/FCF45YBVUAI-dMc.jpg" alt="">
             </div>
 
-           <div class="submit-field">
-            <input type="submit" value="Add Post" class="admin-panel-btn">
-           </div>
-                
-            </div>
-        
-        </form>
+            <form action="" onsubmit="addPost(event)">
+                <h2 class="admin-panel-title">Add Post</h2><br>
+                <div class="input_wrap">
+                    <input type="text" id="pname" required autocomplete="off" />
+                    <label>user name</label>
+                </div>
+                <div class="input_wrap">
+                    <input type="text" id="pprofile" required autocomplete="off" />
+                    <label>user profile image</label>
+                </div>
+                <div class="input_wrap">
+                    <input type="text" id="pimage" required autocomplete="off" />
+                    <label>post Image url</label>
+                </div>
+                <div class="input_wrap">
+                    <input type="text" id="pcaption" required autocomplete="off" />
+                    <label>post caption</label>
+                </div>
+
+                <div class="submit-field submit-btn">
+                    <input type="submit" value="Add Post" class="admin-panel-btn">
+                </div>
+
+
+
+            </form>
+        </div>
+
     </div>
 
-</div>
-
-
-
-<script src="./main.js"></script>
+    <script src="./main.js"></script>
 
 </body>
+
 </html>
