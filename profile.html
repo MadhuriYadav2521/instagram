@@ -101,10 +101,10 @@
                             <span class="saved"><i class="fa-regular fa-bookmark"></i>saved</span>
                             <span class="tagged"><i class="fa-solid fa-clipboard-user"></i>tagged</span>
                         </div>
-                        <div class="profile-body-content">
+                        <div class="profile-body-content" id="finalPost">
                             <div class="single-post">
-                                <div class="post-img">
-                                    <img src="./img/cambg_7.jpg" alt="">
+                                <div class="post-img" id="postImage">
+                                    <!-- <img src="./img/cambg_7.jpg" alt=""> -->
                                     <div class="overlay">
                                         <div class="profilHoverIcon">
                                             <span class="like-hover">10<i class="fa-solid fa-heart"></i></span>
@@ -113,9 +113,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="single-post">
+                            <!-- <div class="single-post">
                                 <div class="post-img">
-                                    <img src="./img/cambg_3.jpg" alt="">
+                                     <img src="./img/cambg_3.jpg" alt=""> 
                                     <div class="overlay">
                                         <div class="profilHoverIcon">
                                             <span class="like-hover">10<i class="fa-solid fa-heart"></i></span>
@@ -123,8 +123,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="single-post">
+                            </div> -->
+                            <!-- <div class="single-post">
                                 <div class="post-img">
                                     <img src="./img/cambg_2.jpg" alt="">
                                     <div class="overlay">
@@ -145,7 +145,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="profile-footer">
@@ -259,8 +259,73 @@
 
             // add post
             var currentUser = JSON.parse(localStorage.getItem("instagramCurrentUser"))
+
             var userData = JSON.parse(localStorage.getItem("instagramUsers"))
+            var userPosts = JSON.parse(localStorage.getItem("instagramProfilePosts"))
+            for (var i = 0; i < userData.length; i++) {
+                if (currentUser.useremail === userData[i].useremail) {
+                    // alert("got")
+                    if (userData[i].posts == undefined) {
+                        userData[i].posts = userPosts[i];
+                    }
+                    // alert("profile created.")
+                    // window.location.href = './cart.html'
+                }
+            }
+            localStorage.setItem("instagramUsers", JSON.stringify(userData))
+
+            var divToAppendPostImage = document.getElementById("postImage")
+            // var divToAppendprofileSubname = document.getElementById("profileSubname")
+            // var divToAppendProfileBio = document.getElementById("ProfileBio")
+            var divToAppendfinalPost = document.getElementById("finalPost")
+            // var divToAppendfinalUsername = document.getElementById("username")
+
+
+
+            var products;
+            for (var i = 0; i < userData.length; i++) {
+                if (currentUser.useremail == userData[i].useremail) {
+                    products = userPosts;
+                }
+            }
+            console.log(products, "posts info here");
+            // var finalData = "";
+
+
+
+            var finalPostImage = "";
+            // var finalProfileSubname = "";
+            // var finalProfileBio = "";
+            var finalPost = "";
+
+            for (var i = 0; i < products.length; i++) {
+                finalPost += divToAppendPostImage = ` <div class="single-post">
+                                <div class="post-img" id="postImage">
+                                    <img src='${products[i].pimage}'/>
+                                    <div class="overlay">
+                                        <div class="profilHoverIcon">
+                                            <span class="like-hover">10<i class="fa-solid fa-heart"></i></span>
+                                            <span class="comment-hover">8<i class="fa-solid fa-comment"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                 
+                
+                `
+                // finalProfileSubname = `${products[i].pSubname}`
+                // finalProfileBio = `${products[i].bio}`
+            }
+
+            // `<div> <img src='${products[i].proImage}'/><br/>
+            //             <h2>${products[i].proName}</h2><br/>
+            //             <h3>${products[i].proPrice}</h3>`
+
+            divToAppendPostImage.innerHTML = finalPostImage;
+            // divToAppendprofileSubname.innerHTML = finalProfileSubname;
+            // divToAppendProfileBio.innerHTML = finalProfileBio;
+            divToAppendfinalPost.innerHTML = finalPost;
+
 
 
 
