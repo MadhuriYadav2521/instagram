@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Profile</title>
+    <title>Instagram</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.jpg">
+    <script src="https://kit.fontawesome.com/8cfedbae53.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="add-product-container">
-      
+    <div class="screen">
+        <div class="add-post-container">
+            <div class="add-post-img-wrapper">
+                <img src="https://pbs.twimg.com/media/FCF45YBVUAI-dMc.jpg" alt="">
+            </div>
         <form action="" onsubmit="createProfile(event)">
-            <h1 class="admin-panel-title">create Profile</h1>
+            <h2 class="admin-panel-title">Create Profile</h2><br>
             <div class="input_wrap">
                 <input type="text" id="pSubname" required  autocomplete="off"/>
-                <label>post sub name</label>
+                <label>Profile sub name</label>
             </div>
             <div class="input_wrap">
                 <input type="text" id="pimage" required  autocomplete="off"/>
-                <label>post Image url</label>
+                <label>Profile Picture</label>
             </div>
             <div class="input_wrap">
                 <textarea rows="4" cols="50" name="comment" id="bio">
-                    Enter text here...</textarea>
-                <label>bio</label>
-            </div>
+                    </textarea>
+                <label> Add bio</label>
+            </div><br>
 
-           <div class="submit-field">
+           <div class="submit-field submit-btn" >
             <input type="submit" value="Done" class="admin-panel-btn">
            </div>
                 
@@ -36,9 +44,8 @@
 
 </div>
 
-
-
 <script src="./main.js"></script>
 
 </body>
+
 </html>
