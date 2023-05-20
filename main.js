@@ -134,7 +134,7 @@ function createProfile(event) {
     var pSubname = document.getElementById("pSubname").value;
     var pimage = document.getElementById("pimage").value;
     var bio = document.getElementById("bio").value;
-    var product = { pSubname, pimage,bio};
+    var product = { pSubname, pimage, bio };
 
 
     var LS = JSON.parse(localStorage.getItem("instagramProfile")) || [];
@@ -142,10 +142,10 @@ function createProfile(event) {
     localStorage.setItem("instagramProfile", JSON.stringify(LS));
 
     alert("Profile updated")
-    window.location.href='./profile.html'
-     profileSubname = document.getElementById("pSubname").value = "";
-     profileImage = document.getElementById("pimage").value = "";
-   ProfileBio = document.getElementById("bio").value = "";
+    window.location.href = './profile.html'
+    profileSubname = document.getElementById("pSubname").value = "";
+    profileImage = document.getElementById("pimage").value = "";
+    ProfileBio = document.getElementById("bio").value = "";
 }
 
 function addProfilePost(event) {
