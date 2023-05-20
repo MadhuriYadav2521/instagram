@@ -96,7 +96,7 @@ function addPost(event) {
     var pprofile = document.getElementById("pprofile").value;
     var pimage = document.getElementById("pimage").value;
     var pcaption = document.getElementById("pcaption").value;
-    var product = { pname, pprofile, pimage, pcaption};
+    var product = { pname, pprofile, pimage, pcaption };
 
     var LS = JSON.parse(localStorage.getItem("instagramPosts")) || [];
     LS.push(product);
@@ -115,7 +115,7 @@ function addStory(event) {
     // alert("Product adding....")
     var pname = document.getElementById("pname").value;
     var pimage = document.getElementById("pimage").value;
-    var product = { pname, pimage};
+    var product = { pname, pimage };
 
     var LS = JSON.parse(localStorage.getItem("instagramStories")) || [];
     LS.push(product);
@@ -128,23 +128,51 @@ function addStory(event) {
     document.getElementById("pcaption").value = "";
 }
 
+// function createProfile(event) {
+//     event.preventDefault();
+//     // alert("Product adding....")
+//     var pSubname = document.getElementById("pSubname").value;
+//     var pimage = document.getElementById("pimage").value;
+//     var bio = document.getElementById("bio").value;
+//     var product = { pSubname, pimage,bio};
+
+
+//     var LS = JSON.parse(localStorage.getItem("instagramProfile")) || [];
+//     LS.push(product);
+//     localStorage.setItem("instagramProfile", JSON.stringify(LS));
+
+//     alert("Profile updated")
+//     window.location.href='./profile.html'
+//      profileSubname = document.getElementById("pSubname").value = "";
+//      profileImage = document.getElementById("pimage").value = "";
+//    ProfileBio = document.getElementById("bio").value = "";
+// }
+
+
 function createProfile(event) {
     event.preventDefault();
     // alert("Product adding....")
     var pSubname = document.getElementById("pSubname").value;
     var pimage = document.getElementById("pimage").value;
     var bio = document.getElementById("bio").value;
-    var product = { pSubname, pimage,bio};
+    var product = { pSubname, pimage, bio };
 
-    var LS = JSON.parse(localStorage.getItem("instagramProfile")) || [];
-    LS.push(product);
-    localStorage.setItem("instagramProfile", JSON.stringify(LS));
+    var currentUser = JSON.parse(localStorage.getItem("instagramCurrentUser"))
+    var userData = JSON.parse(localStorage.getItem("instagramUsers"))
+
+    for (var i = 0; i < userData.length; i++) {
+        if (currentUser[i].useremail == userData[i].useremail) {
+            var LS = JSON.parse(localStorage.getItem("instagramProfile")) || [];
+            LS.push(product);
+            localStorage.setItem("instagramProfile", JSON.stringify(LS));
+
+        }
+    }
 
     alert("Profile updated")
-    window.location.href='./profile.html'
-     profileSubname = document.getElementById("pSubname").value = "";
-     profileImage = document.getElementById("pimage").value = "";
-   ProfileBio = document.getElementById("bio").value = "";
+    window.location.href = './profile.html'
+    profileSubname = document.getElementById("pSubname").value = "";
+    profileImage = document.getElementById("pimage").value = "";
+    ProfileBio = document.getElementById("bio").value = "";
 }
-
 
