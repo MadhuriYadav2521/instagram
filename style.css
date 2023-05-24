@@ -788,9 +788,37 @@ input[type="password"]:focus {
     width: 100%;
 }
 
+/* ------------ Search ------------ */
 
-
-
+.search-right{
+    width: 82%;
+    margin-left: 18%;
+}
+.search-container{
+    width: 40%;
+    border: .1rem solid black;
+    margin: 3rem 2rem;
+    padding: 2rem 0;
+}
+.search-header{
+    width: 100%;
+    margin-bottom: .3rem;
+}
+.search-header input{
+    width: 70%;
+    font-size: 1rem;
+    padding: .1rem;
+}
+.search-header button{
+    width: 28%;
+    font-size: 1rem;
+    padding: .1rem;
+}
+.search-footer{
+    width: 100%;
+    background-color: lightgray;
+    height: 300px;
+}
 
 
 

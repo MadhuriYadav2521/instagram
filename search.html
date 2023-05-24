@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.jpg">
+    <script src="https://kit.fontawesome.com/8cfedbae53.js" crossorigin="anonymous"></script>
+    <style>
+        #searchbar {
+            margin-left: 15%;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        input[type=text] {
+            width: 30%;
+            -webkit-transition: width 0.15s ease-in-out;
+            transition: width 0.15s ease-in-out;
+        }
+
+        /* When the input field gets focus,
+        change its width to 100% */
+        input[type=text]:focus {
+            width: 70%;
+        }
+
+        .list {
+            font-size: 1.5em;
+            margin-left: 90px;
+        }
+
+        .searchResult {
+            display: list-item;
+        }
+
+        /* ----------- */
+        .sidebar {
+            width: 40%;
+            height: 30rem;
+            border: 1px solid black;
+            margin-top: 6% ;
+            padding: 1.5rem 2rem;
+        }
+
+        .searchForm {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .searchtxt {
+            font-size: 1.4rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .searchInput {
+            width: 75%;
+            border: .1rem solid lightgray;
+            outline: none;
+            padding: .2rem 2rem;
+            font-size: 1rem;
+            border-radius: .6rem;
+
+        }
+
+        .searchTxtBtn {
+            width: 23%;
+            border: none;
+            outline: none;
+            background-color: dodgerblue;
+            font-size: 1.1rem;
+            font-weight: 550;
+            color: white;
+            padding: .3rem;
+            border-radius: .6rem;
+            text-transform: capitalize;
+            cursor: pointer;
+
+        }
+
+        .searchResultContainer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+
+        .SearchResName {
+            width: 75%;
+            font-size: 1.2rem;
+            padding: 1rem;
+            cursor: pointer;
+
+        }
+
+        .searchresFollowtxt {
+            width: 23%;
+            font-size: 1rem;
+            color: dodgerblue;
+            font-weight: 550;
+            padding: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="screen">
+        <div class="homeContainer">
+            <div class="home-left">
+                <div class="logo-wrapper" onclick="window.location.href='./index.html'">
+                    <div class="logo-img">
+                        <img src="./img/Instagram_logo.svg.png" alt="">
+                    </div>
+                </div>
+                <div class="navbar-wrapper">
+                    <div class="navLink">
+                        <i class="fa-solid fa-house"></i>
+                        <span>home</span>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>search</span>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-regular fa-compass"></i>
+                        <span>explore</span>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-solid fa-clapperboard"></i>
+                        <span>reels</span>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-regular fa-comment"></i>
+                        <span>messages</span>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>notifications</span>
+                    </div>
+                    <div class="navLink" onclick="window.location.href='./add-post.html'">
+                        <i class="fa-regular fa-square-plus"></i>
+                        <span>create</span>
+                    </div>
+                    <div class="navLink" onclick="window.location.href='./login.html'">
+                        <i class="fa-regular fa-user"></i>
+                        <span id="switch">profile</span>
+                    </div>
+                    <div class="navLink" id="logout">
+
+                    </div>
+                </div>
+                <div class="more-wrapper">
+                    <div class="navLink">
+                        <i class="fa-solid fa-bars"></i>
+                        <span>more</span>
+                    </div>
+                </div>
+            </div>
+            <div class="search-right">
+                <div class="sidebar">
+                    <div>
+                        <h1 class="searchtxt">Search</h1>
+                        <form onsubmit="SearchUser(event)" class="searchForm">
+                            <input type="search" class="searchInput" autocomplete="off" placeholder="Search" id="Search_users" />
+                            <input type="submit" class="searchTxtBtn" value="search" />
+                        </form>
+                    </div>
+                    <div id="SearchRes">
+                        <div id="SearchResDiv" class="searchResultContainer">
+                            <p class="SearchResName"></p>
+                            <p class="searchresFollowtxt"></p>
+                        </div>
+                        <div id="NoResFound">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- input tag -->
+                <!-- <input id="searchbar" onkeyup="search_user()" type="text" name="search"
+                    placeholder="Search..">
+
+                <ol class='list'>
+                    <li class="searchResult"></li>
+
+                </ol> -->
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+         window.onload = function () {
+            // alert("working")
+            var currentUser = JSON.parse(localStorage.getItem("instagramCurrentUser"))
+            // console.log(currentUser,"currentUser");
+            if (!!currentUser) {
+                // alert(currentUser.namee)
+                var logoutDiv = document.getElementById("logout");
+                var divFromHtml = document.getElementById("switch");
+                // console.log(divFromHtml,"divFromHtml");
+                // var h1 = document.createElement("h1");
+                // h1.innerText = "madhuri"
+                // divFromHtml.append(h1)
+                var button = '<div onclick="logout() " ><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></div>'
+                var name = `<p> ${currentUser.namee}</p>`;
+                divFromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
+            }
+        }
+
+        function SearchUser(event) {
+            event.preventDefault();
+            var input = document.getElementById("Search_users").value;
+            var empty = document.getElementById("NoResFound");
+
+            // console.log(input,"input here")
+            var divtodisplay = document.getElementById("SearchRes");
+            // input=input.toLowerCase();
+            // var data=document.getElementById("Instagramusers");
+            var currentUser = JSON.parse(localStorage.getItem("instagramCurrentUser"));
+            var userdata = JSON.parse(localStorage.getItem("instagramUsers"));
+            var currentuser = [];
+            var searchRes;
+            var set = "No Results";
+            // console.log(set)
+            for (var i = 0; i < userdata.length; i++) {
+                if (userdata[i].useremail = currentUser.useremail) {
+                    currentuser.push(userdata[i]);
+                }
+            }
+            console.log(currentuser, "users")
+            for (var i = 0; i < currentuser.length; i++) {
+                console.log(currentuser[i].user_info, "name here")
+                if (currentuser[i].namee == input) {
+                    searchRes = currentuser[i];
+
+                    var display = `<div id="SearchResDiv" class="searchResultContainer">
+                    <p class="SearchResName">${searchRes.namee}</p>
+                    <p class="searchresFollowtxt">Follow</p>
+                </div>`;
+                }
+                else {
+                    var nodisplay = `<div id="NoResFound">
+                    <p>${set}</p>
+                </div>`;
+                }
+            }
+
+            // console.log(display_users,"dis")
+            divtodisplay.innerHTML = display;
+            empty.innerHTML = nodisplay;
+            document.getElementById("Search_users").value = '';
+
+        }
+
+            // JavaScript code
+            function search_user() {
+
+                var LS = JSON.parse(localStorage.getItem("instagramUsers"))
+                let input = document.getElementById('searchbar').value
+                input = input.toLowerCase();
+                var divForList = document.getElementsByClassName("searchResult");
+
+
+                var listOfUsers = []
+                for (var i = 0; i < LS.length; i++) {
+                    if (LS[i].namee.toLowerCase().includes(input)) {
+                        listOfUsers += `<li class="searchResult">${LS[i].namee}</li>`
+
+                    }
+                }
+
+                divForList.innerHTML = listOfUsers;
+                console.log(divForList);
+
+
+            }
+    </script>
+</body>
+
+</html>
