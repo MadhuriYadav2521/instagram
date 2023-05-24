@@ -790,35 +790,72 @@ input[type="password"]:focus {
 
 /* ------------ Search ------------ */
 
-.search-right{
-    width: 82%;
-    margin-left: 18%;
+
+.searchbarWrapper{
+    width: 89%;
+    border: .1rem solid lightgray;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
 }
-.search-container{
-    width: 40%;
-    border: .1rem solid black;
-    margin: 3rem 2rem;
-    padding: 2rem 0;
-}
-.search-header{
+#searchbar {
     width: 100%;
-    margin-bottom: .3rem;
-}
-.search-header input{
-    width: 70%;
+    padding: .7rem;
     font-size: 1rem;
-    padding: .1rem;
+    background-color: rgb(234, 232, 232);
+    border-radius: .5rem;
+    outline: none;
+    border: none;
 }
-.search-header button{
-    width: 28%;
-    font-size: 1rem;
-    padding: .1rem;
-}
-.search-footer{
+.searchFooter{
     width: 100%;
-    background-color: lightgray;
-    height: 300px;
+    padding: 1.5rem;
 }
+.list {
+    width: 100%;
+    font-size: .9rem;
+    /* margin-left: 90px; */
+}
+
+.searchResult {
+    display: list-item;
+}
+.searchHeader{
+    width: 100%;
+    padding: 1.5rem;
+    border-bottom: .1rem solid lightgray;
+}
+.searchHeader h2{
+    margin-bottom: 2rem;
+}
+
+/* -----------  sidebar ------------ */
+#mySidebar {
+    width: 30rem;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.sideNavBar{
+    width: 15%;
+    text-align: center;
+    /* border: 1px solid salmon; */
+
+}
+.sideNavBar span{
+    display: none;
+}
+.sideNavBar .navLink{
+    text-align: center;
+    display: block
+}
+
+
 
 
 

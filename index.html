@@ -9,23 +9,77 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/x-icon" href="./img/favicon.jpg">
     <script src="https://kit.fontawesome.com/8cfedbae53.js" crossorigin="anonymous"></script>
+    <style>
+
+    </style>
 </head>
 
 <body>
     <div class="screen">
         <div class="homeContainer">
+            <div id="mySidebar">
+                <div class="sideNavBar">
+                    <div class="logo-wrapper" onclick="window.location.href='./index.html'">
+                        <div class="navLink">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+                    <div class="navLink" onclick="w3_open()">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-regular fa-compass"></i>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-solid fa-clapperboard"></i>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-regular fa-comment"></i>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="navLink" onclick="window.location.href='./add-post.html'">
+                        <i class="fa-regular fa-square-plus"></i>
+                    </div>
+                    <div class="navLink" onclick="window.location.href='./login.html'">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+                    <div class="navLink" id="logout">
+
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+
+                <div class="searchbarWrapper">
+                    <div class="searchHeader">
+                        <h2>Search</h2>
+                        <input id="searchbar" onkeyup="search_user()" type="text" name="search" placeholder="Search..">
+                    </div>
+                    <div class="searchFooter">
+                        <ol class='list' id="show">
+                        </ol>
+                    </div>
+                </div>
+            </div>
             <div class="home-left">
                 <div class="logo-wrapper" onclick="window.location.href='./index.html'">
                     <div class="logo-img">
                         <img src="./img/Instagram_logo.svg.png" alt="">
                     </div>
                 </div>
+
                 <div class="navbar-wrapper">
                     <div class="navLink">
                         <i class="fa-solid fa-house"></i>
                         <span>home</span>
                     </div>
-                    <div class="navLink" onclick="window.location.href='./search.html'">
+                    <div class="navLink" onclick="w3_open()">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <span>search</span>
                     </div>
@@ -45,7 +99,7 @@
                         <i class="fa-regular fa-heart"></i>
                         <span>notifications</span>
                     </div>
-                    <div class="navLink"  onclick="window.location.href='./add-post.html'">
+                    <div class="navLink" onclick="window.location.href='./add-post.html'">
                         <i class="fa-regular fa-square-plus"></i>
                         <span>create</span>
                     </div>
@@ -64,11 +118,11 @@
                     </div>
                 </div>
             </div>
-            <div class="home-middle">
+            <div class="home-middle" onclick="w3_close()">
                 <div class="story-section" id="storyContainer">
                     <a href="#" class="story">
                         <div class="story-img">
-                            
+
                         </div>
                         <div class="story-holder-name">add story</div>
                     </a>
@@ -116,7 +170,7 @@
                     </div>
                 </div>
             </div>
-            <div class="home-right">
+            <div class="home-right" onclick="w3_close()">
                 <div class="home-right-container">
                     <div class="account-switch" onclick="window.location.href='./profile.html'">
                         <div class="account-switch-left">
@@ -215,10 +269,10 @@
             var divToShowAllStories = document.getElementById("storyContainer");
 
             var finalContainer = "";
-            var finalStoryContainer ="";
+            var finalStoryContainer = "";
 
             var storiesFromLS = JSON.parse(localStorage.getItem("instagramStories"))
-            for(var i=0; i<storiesFromLS.length; i++){
+            for (var i = 0; i < storiesFromLS.length; i++) {
                 finalStoryContainer += `<a href="#" class="story">
                         <div class="story-img">
                             <img src=${storiesFromLS[i].pimage} />
@@ -228,7 +282,7 @@
             }
 
             var productsFromLS = JSON.parse(localStorage.getItem("instagramPosts"))
-            for (var i = productsFromLS.length-1; i >=0 ; i--) {
+            for (var i = productsFromLS.length - 1; i >= 0; i--) {
                 // finalData += `<a  onclick='redirect(${JSON.stringify(productsFromLS[i])})'>
                 //             <img src=${productsFromLS[i].proImage} /><div class="g-pro-name">${productsFromLS[i].proName}</div>
                 //             <div class="g-pro-price">₹  ${productsFromLS[i].proPrice}</div></a>`;

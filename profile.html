@@ -113,7 +113,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="profile-footer">
@@ -160,64 +160,31 @@
                 divFromHtml.innerHTML = name;
                 logoutDiv.innerHTML = button;
             }
-            // else{
-            //     alert("current user absent")
-            // }
-
 
             // add bio
             var currentUser = JSON.parse(localStorage.getItem("instagramCurrentUser"))
-
             var userData = JSON.parse(localStorage.getItem("instagramUsers"))
-            var userBio = JSON.parse(localStorage.getItem("instagramProfile"))
-            for (var i = 0; i < userData.length; i++) {
-                if (currentUser.useremail === userData[i].useremail) {
-                    // alert("got")
-                    if (userData[i].bio == undefined) {
-                        userData[i].bio = userBio[i];
-                    }
-                    // alert("profile created.")
-                    // window.location.href = './cart.html'
-                }
-            }
-            localStorage.setItem("instagramUsers", JSON.stringify(userData))
-
             var divToAppendprofileImage = document.getElementById("profileImage")
             var divToAppendprofileSubname = document.getElementById("profileSubname")
             var divToAppendProfileBio = document.getElementById("ProfileBio")
             var divToAppendfinalProfile = document.getElementById("finalProfile")
-            // var divToAppendfinalUsername = document.getElementById("username")
-
-
-
-            var products;
+            var uBio;
             for (var i = 0; i < userData.length; i++) {
                 if (currentUser.useremail == userData[i].useremail) {
-                    products = userBio;
+                    uBio = userData[i].userBio;
                 }
             }
-            console.log(products, "bio info here");
-            // var finalData = "";
-
-
-
             var finalProfileImage = "";
             var finalProfileSubname = "";
             var finalProfileBio = "";
             var finalProfile = "";
-
-            for (var i = 0; i < products.length; i++) {
-                finalProfile = finalProfileImage = `<div class="profile-img" id="profileImage">
-                    <img src='${products[i].pimage}'/>
+            finalProfile = finalProfileImage = `<div class="profile-img" id="profileImage">
+                    <img src='${uBio.pimage}'/>
                             </div>
                 `
-                finalProfileSubname = `${products[i].pSubname}`
-                finalProfileBio = `${products[i].bio}`
-            }
+            finalProfileSubname = `${uBio.pSubname}`
+            finalProfileBio = `${uBio.bio}`
 
-            // `<div> <img src='${products[i].proImage}'/><br/>
-            //             <h2>${products[i].proName}</h2><br/>
-            //             <h3>${products[i].proPrice}</h3>`
 
             divToAppendprofileImage.innerHTML = finalProfileImage;
             divToAppendprofileSubname.innerHTML = finalProfileSubname;
@@ -234,7 +201,10 @@
                 if (currentUser.useremail === userData[i].useremail) {
                     // alert("got")
                     if (userData[i].posts == undefined) {
+                        userData[i].posts = "";
+                    }else{
                         userData[i].posts = userPosts[i];
+
                     }
                     // alert("profile created.")
                     // window.location.href = './cart.html'
@@ -243,17 +213,11 @@
             localStorage.setItem("instagramUsers", JSON.stringify(userData))
 
             var divToAppendPostImage = document.getElementById("postImage")
-            // var divToAppendprofileSubname = document.getElementById("profileSubname")
-            // var divToAppendProfileBio = document.getElementById("ProfileBio")
             var divToAppendfinalPost = document.getElementById("finalPost")
-            // var divToAppendfinalUsername = document.getElementById("username")
-
-
-
             var products;
             for (var i = 0; i < userData.length; i++) {
                 if (currentUser.useremail == userData[i].useremail) {
-                    products = userPosts;
+                    products =  userPosts;
                 }
             }
             console.log(products, "posts info here");
@@ -262,8 +226,6 @@
 
 
             var finalPostImage = "";
-            // var finalProfileSubname = "";
-            // var finalProfileBio = "";
             var finalPost = "";
 
             for (var i = 0; i < products.length; i++) {
@@ -281,20 +243,9 @@
                 
                 
                 `
-                // finalProfileSubname = `${products[i].pSubname}`
-                // finalProfileBio = `${products[i].bio}`
             }
-
-            // `<div> <img src='${products[i].proImage}'/><br/>
-            //             <h2>${products[i].proName}</h2><br/>
-            //             <h3>${products[i].proPrice}</h3>`
-
             divToAppendPostImage.innerHTML = finalPostImage;
-            // divToAppendprofileSubname.innerHTML = finalProfileSubname;
-            // divToAppendProfileBio.innerHTML = finalProfileBio;
             divToAppendfinalPost.innerHTML = finalPost;
-
-
 
 
 
