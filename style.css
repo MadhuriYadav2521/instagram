@@ -477,6 +477,24 @@ input[type="password"]:focus {
 }
 
 
+.form-post-container{
+    width: 60%;
+    margin: 3rem auto;
+    display: flex;
+    border: .1rem solid lightgray;
+}
+.add-post-img-wrapper{
+    width: 50%;
+}
+.add-post-img-wrapper img{
+    width: 100%;
+}
+.form-post-container form{
+    width: 50%;
+    padding: 1.5rem;
+}
+
+
 /* ------------ profile ------------ */
 
 .profile-right {
@@ -768,24 +786,139 @@ input[type="password"]:focus {
     text-transform: capitalize;
     margin-right: 1rem;
 }
-.add-post-container{
-    width: 60%;
+.add-post-middle {
+    width: 82%;
     border: .1rem solid lightgray;
-    margin: 4rem auto;
+    margin-left: 18%;
+    
+}
+.add-post-middle h2{
+    margin: 1.7rem 1.2rem;
+}
+.add-post-container{
+    width: 85%;
+    border: .1rem solid lightgray;
+    margin: 0 auto 2rem auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
-.add-post-container form{
-    width: 50%;
-    padding:  0 2rem;
+.add-post-left{
+    width: 25%;
+    border-right: .1rem solid lightgray;
 }
-.add-post-img-wrapper{
-    width: 50%;
-    /* border: 1px solid black; */
+.add-post-right{
+    width: 75%;
+    /* border: .1rem solid lightgray; */
+    padding: 2rem;
+
 }
-.add-post-img-wrapper img{
+.add-post-right form{
     width: 100%;
+}
+.left-head{
+    width: 100%;
+    padding: 1.5rem;
+    border-bottom: .1rem solid lightgray;
+}
+.i-img-wrapper{
+    width: 100%;
+    display: flex;
+}
+.i-img{
+    width: 10%;
+}
+.i-img img{
+    width: 100%;
+}
+.p-post-main-text{
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: .3rem;
+}
+.post-content-text{
+    font-size: .8rem;
+    line-height: 1.3rem;
+}
+.setting-content{
+    width: 100%;
+    margin: .3rem 0;
+}
+.s-c-item{
+    width: 100%;
+}
+.s-c-item i{
+    font-size: .8rem;
+}
+.p-post-blue-text{
+    font-weight: 600;
+    color: dodgerblue;
+    font-size: .8rem;
+}
+.left-footer{
+    width: 100%;
+    padding: 1.5rem;
+    
+}
+.form-head{
+    width: 80%;
+    margin: 1rem auto;
+    display: flex;
+    gap: 1.2rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 1rem;
+}
+.form-profile-img{
+    width: 20%;
+}
+.form-profile-img img{
+    width: 100%;
+    border-radius: 100%;
+    aspect-ratio: 3/3;
+    object-fit: cover;
+}
+.form-profile-head{
+    width: 76%;
+}
+.form-username{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: .3rem;
+}
+.form-bio{
+    font-size: 1rem;
+}
+.form-footer{
+      width: 80%;
+    margin: 1rem auto;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 1rem;
+}
+.form-input{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.form-input label{
+    width: 24%;
+    font-size: .9rem;
+    font-weight: 600;
+}
+.form-input input{
+    width: 76%;
+    outline: none;
+    border: .1rem solid lightgray;
+    font-size: 1rem;
+    padding: .5rem .2rem;
+
+}
+.form-input textarea{
+    width: 76%;
+    outline: none;
+    border: .1rem solid lightgray;
+    font-size: 1rem;
+    padding: .5rem .2rem;
+
 }
 
 /* ------------ Search ------------ */

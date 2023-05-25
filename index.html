@@ -48,9 +48,9 @@
                     <div class="navLink" onclick="window.location.href='./login.html'">
                         <i class="fa-regular fa-user"></i>
                     </div>
-                    <div class="navLink" id="logout">
+                    <!-- <div class="navLink" id="logout">
 
-                    </div>
+                    </div> -->
                     <div class="navLink">
                         <i class="fa-solid fa-bars"></i>
                     </div>
@@ -59,7 +59,8 @@
                 <div class="searchbarWrapper">
                     <div class="searchHeader">
                         <h2>Search</h2>
-                        <input id="searchbar" onkeyup="search_user()" type="search" autocomplete="off" name="search" placeholder="Search..">
+                        <input id="searchbar" onkeyup="search_user()" type="search" autocomplete="off" name="search"
+                            placeholder="Search..">
                     </div>
                     <div class="searchFooter">
                         <div class='list' id="show">
@@ -75,7 +76,7 @@
                 </div>
 
                 <div class="navbar-wrapper">
-                    <div class="navLink">
+                    <div class="navLink"  onclick="window.location.href='./index.html'">
                         <i class="fa-solid fa-house"></i>
                         <span>home</span>
                     </div>
@@ -99,11 +100,11 @@
                         <i class="fa-regular fa-heart"></i>
                         <span>notifications</span>
                     </div>
-                    <div class="navLink" onclick="window.location.href='./add-post.html'">
+                    <div class="navLink" onclick="window.location.href='./add-profile-post.html'">
                         <i class="fa-regular fa-square-plus"></i>
                         <span>create</span>
                     </div>
-                    <div class="navLink" onclick="window.location.href='./login.html'">
+                    <div class="navLink" onclick="window.location.href='./profile.html'">
                         <i class="fa-regular fa-user"></i>
                         <span id="switch">profile</span>
                     </div>
@@ -339,6 +340,7 @@
 
 
         }
+       
         function redirect(product) {
             var singleProduct = JSON.stringify(product);
             // console.log(s, " s here")

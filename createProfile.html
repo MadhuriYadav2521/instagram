@@ -13,38 +13,247 @@
 
 <body>
     <div class="screen">
-        <div class="add-post-container">
-            <div class="add-post-img-wrapper">
-                <img src="https://pbs.twimg.com/media/FCF45YBVUAI-dMc.jpg" alt="">
-            </div>
-        <form action="" onsubmit="createProfile(event)">
-            <h2 class="admin-panel-title">Create Profile</h2><br>
-            <div class="input_wrap">
-                <input type="text" id="pSubname" required  autocomplete="off"/>
-                <label>Profile sub name</label>
-            </div>
-            <div class="input_wrap">
-                <input type="text" id="pimage" required  autocomplete="off"/>
-                <label>Profile Picture</label>
-            </div>
-            <div class="input_wrap">
-                <textarea rows="4" cols="50" name="comment" id="bio">
-                    </textarea>
-                <label> Add bio</label>
-            </div><br>
+        <div id="mySidebar">
+            <div class="sideNavBar">
+                <div class="logo-wrapper" onclick="window.location.href='./index.html'">
+                    <div class="navLink">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="navLink">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+                <div class="navLink" onclick="w3_open()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="navLink">
+                    <i class="fa-regular fa-compass"></i>
+                </div>
+                <div class="navLink">
+                    <i class="fa-solid fa-clapperboard"></i>
+                </div>
+                <div class="navLink">
+                    <i class="fa-regular fa-comment"></i>
+                </div>
+                <div class="navLink">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="navLink" onclick="window.location.href='./add-post.html'">
+                    <i class="fa-regular fa-square-plus"></i>
+                </div>
+                <div class="navLink" onclick="window.location.href='./login.html'">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <!-- <div class="navLink" id="logout">
 
-           <div class="submit-field submit-btn" >
-            <input type="submit" value="Done" class="admin-panel-btn">
-           </div>
+                </div> -->
+                <div class="navLink">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+
+            <div class="searchbarWrapper">
+                <div class="searchHeader">
+                    <h2>Search</h2>
+                    <input id="searchbar" onkeyup="search_user()" type="search" autocomplete="off" name="search"
+                        placeholder="Search..">
+                </div>
+                <div class="searchFooter">
+                    <div class='list' id="show">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="home-left">
+            <div class="logo-wrapper" onclick="window.location.href='./index.html'">
+                <div class="logo-img">
+                    <img src="./img/Instagram_logo.svg.png" alt="">
+                </div>
+            </div>
+
+            <div class="navbar-wrapper">
+                <div class="navLink" onclick="window.location.href='./index.html'" >
+                    <i class="fa-solid fa-house"></i>
+                    <span>home</span>
+                </div>
+                <div class="navLink" onclick="w3_open()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>search</span>
+                </div>
+                <div class="navLink">
+                    <i class="fa-regular fa-compass"></i>
+                    <span>explore</span>
+                </div>
+                <div class="navLink">
+                    <i class="fa-solid fa-clapperboard"></i>
+                    <span>reels</span>
+                </div>
+                <div class="navLink">
+                    <i class="fa-regular fa-comment"></i>
+                    <span>messages</span>
+                </div>
+                <div class="navLink">
+                    <i class="fa-regular fa-heart"></i>
+                    <span>notifications</span>
+                </div>
+                <div class="navLink" onclick="window.location.href='./add-profile-post.html'">
+                    <i class="fa-regular fa-square-plus"></i>
+                    <span>create</span>
+                </div>
+                <div class="navLink" onclick="window.location.href='./profile.html'">
+                    <i class="fa-regular fa-user"></i>
+                    <span id="switch">profile</span>
+                </div>
+                <div class="navLink" id="logout">
+
+                </div>
+            </div>
+            <div class="more-wrapper">
+                <div class="navLink">
+                    <i class="fa-solid fa-bars"></i>
+                    <span>more</span>
+                </div>
+            </div>
+        </div>
+        <div class="add-post-middle" onclick="w3_close()">
+            <h2>Settings</h2>
+            <div class="add-post-container">
+                <div class="add-post-left">
+                    <div class="left-head">
+                        <div class="i-img-wrapper">
+                            <div class="i-img">
+                                <img src="./img/WhatsApp Image 2023-05-25 at 4.06.50 PM.jpeg" alt="">
+                            </div>
+                            <span class="p-post-main-text">Meta</span>
+                        </div>
+                        <div class="p-post-main-text">accounts center</div>
+                        <div class="post-content-text">Manage your connected experiences and account settings across
+                            Meta technologies.</div>
+                        <div class="setting-content">
+                            <div class="s-c-item">
+                                <i class="fa-regular fa-user"></i>
+                                <span class="post-content-text">Personal Details</span>
+                            </div>
+                            <div class="s-c-item">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <span class="post-content-text">Password & Security</span>
+                            </div>
+                            <div class="s-c-item">
+                                <i class="fa-solid fa-rectangle-ad"></i>
+                                <span class="post-content-text">Add preferences</span>
+                            </div>
+                        </div>
+                        <div class="p-post-blue-text">See more in Accounts Center</div>
+                    </div>
+                    <div class="left-footer">
+                        <div class="options post-content-text">Apps and websites</div>
+                        <div class="options post-content-text">Email notifications</div>
+                        <div class="options post-content-text">Push notifications</div>
+                        <div class="options post-content-text">What you see</div>
+                        <div class="options post-content-text">Who can see your content</div>
+                        <div class="options post-content-text">How others can intract with you</div>
+                        <div class="options post-content-text">Supervision</div>
+                        <div class="options post-content-text">Help</div>
+                        <div class="options post-content-text">Edit profile</div>
+                        <div class="options p-post-blue-text">Switch to professional account</div>
+
+                    </div>
+                </div>
+                <div class="add-post-right">
+                    <h3>Edit Profile</h3><br>
+                    <form action="" onsubmit="createProfile(event)">
+                        <div class="form-head" id="finalProfile">
+                            <div class="form-profile-img" id="profileImage">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjYmlp9JDeNMaFZzw9S3G1dVztGqF_2vq9nA&usqp=CAU"
+                                    alt="">
+                            </div>
+                            <div class="form-profile-head">
+                                <div class="form-username" id="profileSubname">Username</div>
+                                <div class="form-bio" id="ProfileBio">Bio</div>
+                            </div>
+                        </div>
+                        <div class="form-footer">
+                            <div class="form-input">
+                                <label>Profile sub name</label>
+                                <input type="text" id="pSubname" required autocomplete="off" />
+                            </div>
+                            <div class="form-input">
+                                <label>Profile Picture</label>
+                                <input type="text" id="pimage" required autocomplete="off" />
+                            </div>
+                            <div class="form-input">
+                                <label> Add bio</label>
+                                <textarea  name="comment" id="bio">
+                                </textarea>
+                            </div><br>
+
+                            <div class="submit-field submit-btn">
+                                <input type="submit" value="Submit" class="admin-panel-btn">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+        <script>
+            window.onload = function () {
+                // alert("working")
+                var currentUser = JSON.parse(localStorage.getItem("instagramCurrentUser"))
+                // console.log(currentUser,"currentUser");
+                if (!!currentUser) {
+                    // alert(currentUser.namee)
+                    var logoutDiv = document.getElementById("logout");
+                    var divFromHtml = document.getElementById("switch");
+                    // console.log(divFromHtml,"divFromHtml");
+                    // var h1 = document.createElement("h1");
+                    // h1.innerText = "madhuri"
+                    // divFromHtml.append(h1)
+                    var button = '<div onclick="logout() " ><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></div>'
+                    var name = `<p> ${currentUser.namee}</p>`;
+                    divFromHtml.innerHTML = name;
+                    logoutDiv.innerHTML = button;
+                }
+
+                // add bio
+                var currentUser = JSON.parse(localStorage.getItem("instagramCurrentUser"))
+                var userData = JSON.parse(localStorage.getItem("instagramUsers"))
+                var divToAppendprofileImage = document.getElementById("profileImage")
+                var divToAppendprofileSubname = document.getElementById("profileSubname")
+                var divToAppendProfileBio = document.getElementById("ProfileBio")
+                var divToAppendfinalProfile = document.getElementById("finalProfile")
+                var uBio;
+                for (var i = 0; i < userData.length; i++) {
+                    if (currentUser.useremail == userData[i].useremail) {
+                        uBio = userData[i].userBio;
+                    }
+                }
+                var finalProfileImage = "";
+                var finalProfileSubname = "";
+                var finalProfileBio = "";
+                var finalProfile = "";
+                finalProfile =`  <div class="form-profile-img" id="profileImage">
+                    <img src='${uBio.pimage}'/>
+                            </div>
+                            <div class="form-profile-head">
+                                <div class="form-username" id="profileSubname">${uBio.pSubname}</div>
+                                <pre class="form-bio" id="ProfileBio">${uBio.bio}</pre>
+                            </div>` 
                 
-            </div>
-        
-        </form>
-    </div>
+                
+                divToAppendprofileImage.innerHTML = finalProfileImage;
+                divToAppendprofileSubname.innerHTML = finalProfileSubname;
+                divToAppendProfileBio.innerHTML = finalProfileBio;
+                divToAppendfinalProfile.innerHTML = finalProfile;
 
-</div>
+            }
+        </script>
 
-<script src="./main.js"></script>
+
+
+        <script src="./main.js"></script>
 
 </body>
 
