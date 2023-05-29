@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.jpg">
+    <script src="https://kit.fontawesome.com/8cfedbae53.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="screen">
+        <div class="homeContainer">
+            <div id="mySidebar">
+                <div class="sideNavBar">
+                    <div class="logo-wrapper" onclick="window.location.href='./index.html'">
+                        <div class="navLink">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+                    <div class="navLink" onclick="w3_open()">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-regular fa-compass"></i>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-solid fa-clapperboard"></i>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-regular fa-comment"></i>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="navLink" onclick="window.location.href='./add-post.html'">
+                        <i class="fa-regular fa-square-plus"></i>
+                    </div>
+                    <div class="navLink" onclick="window.location.href='./login.html'">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+                    <!-- <div class="navLink" id="logout">
+    
+                    </div> -->
+                    <div class="navLink">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+
+                <div class="searchbarWrapper">
+                    <div class="searchHeader">
+                        <h2>Search</h2>
+                        <input id="searchbar" onkeyup="search_user()" type="search" autocomplete="off" name="search"
+                            placeholder="Search..">
+                    </div>
+                    <div class="searchFooter">
+                        <div class='list' id="show">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home-left">
+                <div class="logo-wrapper" onclick="window.location.href='./index.html'">
+                    <div class="logo-img">
+                        <img src="./img/Instagram_logo.svg.png" alt="">
+                    </div>
+                </div>
+                <div class="navbar-wrapper">
+                    <div class="navLink" onclick="window.location.href='./index.html'">
+                        <i class="fa-solid fa-house"></i>
+                        <span>home</span>
+                    </div>
+                    <div class="navLink" onclick="w3_open()">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>search</span>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-regular fa-compass"></i>
+                        <span>explore</span>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-solid fa-clapperboard"></i>
+                        <span>reels</span>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-regular fa-comment"></i>
+                        <span>messages</span>
+                    </div>
+                    <div class="navLink">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>notifications</span>
+                    </div>
+                    <div class="navLink" onclick="window.location.href='./add-profile-post.html'">
+                        <i class="fa-regular fa-square-plus"></i>
+                        <span>create</span>
+                    </div>
+                    <div class="navLink" onclick="window.location.href='./profile.html'">
+                        <i class="fa-regular fa-user"></i>
+                        <span id="switch">profile</span>
+                    </div>
+                    <div class="navLink" id="logout">
+
+                    </div>
+                </div>
+                <div class="more-wrapper">
+                    <div class="navLink">
+                        <i class="fa-solid fa-bars"></i>
+                        <span>more</span>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-right" onclick="w3_close()">
+                <div class="profileContainer">
+                    <div class="profile-header">
+                        <div class="profile-header-left" id="finalProfile">
+                            <div class="profile-img" id="profileImage">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjYmlp9JDeNMaFZzw9S3G1dVztGqF_2vq9nA&usqp=CAU"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="profile-header-right">
+                            <div class="profile-first-content">
+                                <span class="username" id="profileSubname">name</span>
+                                <!-- <span class="edit-profile" onclick="window.location.href='./createProfile.html'">Edit
+                                    profile</span> -->
+                                <!-- <span class="options"><i class="fa-solid fa-gear"></i></span> -->
+                            </div>
+                            <div class="profile-social-count">
+                                <span class="post-count"><span>4</span>posts</span>
+                                <span class="followers-count"><span>0</span>followers</span>
+                                <span class="following-count"><span>22</span>following</span>
+                            </div>
+                            <div class="profile-bio-wrapper">
+                                <!-- <span class="username" id="profileSubname">m.y2521</span> -->
+
+                                <pre class="bio-content" id="ProfileBio">
+<!-- Full Stack Developer 👩‍💻 -->
+                                </pre>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-body">
+                        <div class="profile-body-header">
+                            <span class="allPost active"><i class="fa-solid fa-table-cells"></i>posts</span>
+                            <span class="saved"><i class="fa-regular fa-bookmark"></i>saved</span>
+                            <span class="tagged"><i class="fa-solid fa-clipboard-user"></i>tagged</span>
+                        </div>
+                        <div class="profile-body-content" id="finalPost">
+                            <div class="single-post">
+                                <div class="post-img" id="postImage">
+                                    <!-- <img src="./img/cambg_7.jpg" alt=""> -->
+                                    <div class="overlay">
+                                        <div class="profilHoverIcon">
+                                            <span class="like-hover">10<i class="fa-solid fa-heart"></i></span>
+                                            <span class="comment-hover">8<i class="fa-solid fa-comment"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="profile-footer">
+                        <div class="p-f-head">
+                            <div class="footer-link">meta</div>
+                            <div class="footer-link">about</div>
+                            <div class="footer-link">blogs</div>
+                            <div class="footer-link">jobs</div>
+                            <div class="footer-link">help</div>
+                            <div class="footer-link">API</div>
+                            <div class="footer-link">privacy</div>
+                            <div class="footer-link">terms</div>
+                            <div class="footer-link">top accounts</div>
+                            <div class="footer-link">location</div>
+                            <div class="footer-link">instagram lite</div>
+                            <div class="footer-link">contact uploading & non-users</div>
+                            <div class="footer-link">meta verified</div>
+                        </div>
+                        <div class="p-f-footer">
+                            <div class="footer-link2">English</div>
+                            <div class="footer-link">&copy; 2023 instagram from meta</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            // alert("working")
+            var currentUser = JSON.parse(localStorage.getItem("instagramCurrentUser"))
+            // console.log(currentUser,"currentUser");
+            if (!!currentUser) {
+                // alert(currentUser.namee)
+                var logoutDiv = document.getElementById("logout");
+                var divFromHtml = document.getElementById("switch");
+              
+                var button = '<div onclick="logout() " ><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></div>'
+                var name = `<p> ${currentUser.namee}</p>`;
+                divFromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
+            }
+        
+
+
+        // current profile
+
+        var profile = JSON.parse(localStorage.getItem("currentProfile"));
+
+        var divToAppendProfileBio = document.getElementById("ProfileBio");
+        var divToAppendProfileName = document.getElementById("profileSubname");
+        var divToAppendProfileImage = document.getElementById("profileImage");
+        var divToAppendPostImage = document.getElementById("postImage");
+        // var divForAddToCart = document.getElementById("forAddToCart");
+
+
+        var profileBio = `${profile.userBio.bio}`
+        var postName = `${profile.userBio.pSubname}`
+        var postImage = `<img src='${profile.posts.pimage}'/>`
+        var profileImage = `<img src='${profile.userBio.pimage}'/>`
+        // var postImage ="";
+        // for (var i = 0; i < profile.posts.length; i++) {
+        //     postImage +=` <div class="single-post">
+        //             <div class="post-img" id="postImage">
+        //                 <img src='${profile.posts.pimage}'/>
+        //                 <div class="overlay">
+        //                     <div class="profilHoverIcon">
+        //                         <span class="like-hover">10<i class="fa-solid fa-heart"></i></span>
+        //                         <span class="comment-hover">8<i class="fa-solid fa-comment"></i></span>
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //         </div>
+    
+        //         `
+        //     }
+
+        console.log(profileBio, "here");
+        console.log(postImage, " posts here");
+        divToAppendProfileBio.innerHTML = profileBio;
+        divToAppendProfileName.innerHTML = postName;
+        divToAppendProfileImage.innerHTML = profileImage;
+        divToAppendPostImage.innerHTML = postImage;
+        // divToAppendProductPrice.innerHTML = productPrice;
+        // divForAddToCart.innerHTML = addToCart;
+
+
+    }
+    </script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

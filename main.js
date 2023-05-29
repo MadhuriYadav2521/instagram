@@ -85,7 +85,7 @@ function logout() {
     alert("We will miss you..")
     localStorage.removeItem("instagramCurrentUser");
     window.location.reload();
-    window.location.href="./signup.html"
+    window.location.href = "./signup.html"
 }
 
 
@@ -164,14 +164,14 @@ function addProfilePost(event) {
     var pEmail = document.getElementById("forPostUserEmail").value;
     var pimage = document.getElementById("pimage").value;
     var pcaption = document.getElementById("pcaption").value;
-    var product = { pimage,pcaption,pEmail };
+    var product = { pimage, pcaption, pEmail };
 
     var LS = JSON.parse(localStorage.getItem("instagramProfilePosts")) || [];
     LS.push(product);
     localStorage.setItem("instagramProfilePosts", JSON.stringify(LS));
 
     alert("Post Added Successfully.")
-    window.location.href="./profile.html"
+    window.location.href = "./profile.html"
     // document.getElementById("pname").value = "";
     document.getElementById("forPostUserEmail").value = "";
     document.getElementById("pimage").value = "";
@@ -179,22 +179,22 @@ function addProfilePost(event) {
 }
 
 
-function search_user(){
+function search_user() {
 
     var LS = JSON.parse(localStorage.getItem("instagramUsers"))
     let input = document.getElementById('searchbar').value
     input = input.toLowerCase();
     var divForList = document.getElementsByClassName("searchResult");
     var showRes = document.getElementById("show")
-    
-    
+
+
     var listOfUsers = []
-  
+
     for (var i = 0; i < LS.length; i++) {
-       
+
         if (LS[i].namee.toLowerCase().includes(input)) {
             listOfUsers += `
-            <div class="searchResWrapper">
+            <div class="searchResWrapper" onclick='redirectToProfile(${JSON.stringify(LS[i])})'>
             <div class="divImg">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1c5g9z2f5eeGclAD7dyMVYbdvvk68utTPog&usqp=CAU"/>
             </div>
@@ -203,19 +203,26 @@ function search_user(){
             `
 
         }
-        
+
     }
     divForList = listOfUsers;
     showRes.innerHTML = divForList;
     // document.write(divForList);
     console.log(divForList);
 }
+function redirectToProfile(profile) {
+    var singleProfile = JSON.stringify(profile);
+    // console.log(s, " s here")
+    // alert("Working")
+    localStorage.setItem("currentProfile", singleProfile);
+    window.location.href = './currentProfile.html'
+}
 
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
-  }
-  
-  function w3_close() {
+}
+
+function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
-  }
+}
 ;
