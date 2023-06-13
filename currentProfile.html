@@ -127,14 +127,13 @@
                         <div class="profile-header-right">
                             <div class="profile-first-content">
                                 <span class="username" id="profileSubname">name</span>
-                                <!-- <span class="edit-profile" onclick="window.location.href='./createProfile.html'">Edit
-                                    profile</span> -->
-                                <!-- <span class="options"><i class="fa-solid fa-gear"></i></span> -->
+                                <span class="follow-btn" onclick="follow()">Follow</span>
+                                <span class="options"><i class="fa-solid fa-gear"></i></span>
                             </div>
                             <div class="profile-social-count">
-                                <span class="post-count"><span>4</span>posts</span>
-                                <span class="followers-count"><span>0</span>followers</span>
-                                <span class="following-count"><span>22</span>following</span>
+                                <span class="post-count"><span>1</span>posts</span>
+                                <span class="followers-count"><span  id="followerId">0</span>followers</span>
+                                <span class="following-count"><span  id="followingID">0</span>following</span>
                             </div>
                             <div class="profile-bio-wrapper">
                                 <!-- <span class="username" id="profileSubname">m.y2521</span> -->
@@ -214,18 +213,28 @@
         // current profile
 
         var profile = JSON.parse(localStorage.getItem("currentProfile"));
+        var userData = JSON.parse(localStorage.getItem("instagramUsers"));
 
         var divToAppendProfileBio = document.getElementById("ProfileBio");
         var divToAppendProfileName = document.getElementById("profileSubname");
         var divToAppendProfileImage = document.getElementById("profileImage");
         var divToAppendPostImage = document.getElementById("postImage");
-        // var divForAddToCart = document.getElementById("forAddToCart");
+        var divForFolloers = document.getElementById("followerId");
+        var divForFollowing = document.getElementById("followingId");
 
+        var followersCount;
+            for (var i = 0; i < userData.length; i++) {
+                if (profile.useremail == userData[i].useremail) {
+                    followersCount = userData[i].followers;
+                }
+            }
 
+            console.log(followersCount,"followersCount");
         var profileBio = `${profile.userBio.bio}`
         var postName = `${profile.userBio.pSubname}`
         var postImage = `<img src='${profile.posts.pimage}'/>`
         var profileImage = `<img src='${profile.userBio.pimage}'/>`
+        var profileFollowers = `${followersCount}`
         // var postImage ="";
         // for (var i = 0; i < profile.posts.length; i++) {
         //     postImage +=` <div class="single-post">
@@ -249,7 +258,7 @@
         divToAppendProfileName.innerHTML = postName;
         divToAppendProfileImage.innerHTML = profileImage;
         divToAppendPostImage.innerHTML = postImage;
-        // divToAppendProductPrice.innerHTML = productPrice;
+        divForFolloers.innerHTML = profileFollowers;
         // divForAddToCart.innerHTML = addToCart;
 
 

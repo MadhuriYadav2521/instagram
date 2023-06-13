@@ -564,7 +564,16 @@ input[type="password"]:focus {
     font-weight: 600;
     cursor: pointer;
 }
-
+.follow-btn{
+    font-size: .9rem;
+    padding: .4rem .6rem;
+    margin-right: 1rem;
+    background-color: dodgerblue;
+    border-radius: .5rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+}
 .edit-profile:hover {
     background-color: #cfc7c7;
 }

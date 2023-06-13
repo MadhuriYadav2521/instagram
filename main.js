@@ -216,6 +216,7 @@ function redirectToProfile(profile) {
     // alert("Working")
     localStorage.setItem("currentProfile", singleProfile);
     window.location.href = './currentProfile.html'
+    console.log(singleProfile);
 }
 
 function w3_open() {
@@ -225,4 +226,44 @@ function w3_open() {
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }
-;
+
+function follow() {
+    var userData = JSON.parse(localStorage.getItem("instagramUsers"))
+    var userDataforfollwing = JSON.parse(localStorage.getItem("instagramUsers"))
+    var othersProfile = JSON.parse(localStorage.getItem("currentProfile"))
+    var currentUser = JSON.parse(localStorage.getItem("instagramCurrentUser"))
+    var folloerCount = 0;
+    var followingCount = 0;
+    for (var i = 0; i < userData.length; i++) {
+        if (othersProfile.useremail == userData[i].useremail) {
+            if (userData[i].followers === undefined) {
+                userData[i].followers = 0;
+            }
+            else {
+                folloerCount++
+
+                userData[i].followers = folloerCount;
+                console.log(folloerCount,"folloerCount");
+            }
+        }
+    }
+    for (var i = 0; i < userDataforfollwing.length; i++) {
+        if (currentUser.useremail == userDataforfollwing[i].useremail) {
+            if (userDataforfollwing[i].following === undefined) {
+                userDataforfollwing[i].following = 0;
+            }
+            else {
+                followingCount++
+
+                userDataforfollwing[i].following = followingCount;
+            }
+        }
+    }
+    localStorage.setItem("instagramUsers", JSON.stringify(userData));
+    localStorage.setItem("instagramUsers", JSON.stringify(userDataforfollwing));
+
+    alert("followed")
+    window.location.reload();
+
+}
+
